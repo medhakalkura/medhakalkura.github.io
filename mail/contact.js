@@ -6,9 +6,9 @@ $(function () {
         },
         submitSuccess: function ($form, event) {
             event.preventDefault();
-            var name = $("input#name").val();
+            //var name = $("input#name").val();
             var email = $("input#email").val();
-            var subject = $("input#subject").val();
+            //var subject = $("input#subject").val();
             var message = $("textarea#message").val();
 
             $this = $("#sendMessageButton");
@@ -18,9 +18,9 @@ $(function () {
                 url: "contact.php",
                 type: "POST",
                 data: {
-                    name: name,
+                    //name: name,
                     email: email,
-                    subject: subject,
+                    //subject: subject,
                     message: message
                 },
                 cache: false,
@@ -38,7 +38,7 @@ $(function () {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                             .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
+                    $('#success > .alert-danger').append($("<strong>").text("Sorry, it seems that our mail server is not responding. Please try again later!"));
                     $('#success > .alert-danger').append('</div>');
                     $('#contactForm').trigger("reset");
                 },
