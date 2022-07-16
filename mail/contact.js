@@ -6,9 +6,9 @@ $(function () {
         },
         submitSuccess: function ($form, event) {
             event.preventDefault();
-            //var name = $("input#name").val();
+            var name = $("input#name").val();
             var email = $("input#email").val();
-            //var subject = $("input#subject").val();
+            var subject = $("input#subject").val();
             var message = $("textarea#message").val();
 
             $this = $("#sendMessageButton");
@@ -18,9 +18,9 @@ $(function () {
                 url: "contact.php",
                 type: "POST",
                 data: {
-                    //name: name,
+                    name: name,
                     email: email,
-                    //subject: subject,
+                    subject: subject,
                     message: message
                 },
                 cache: false,
